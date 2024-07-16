@@ -41,6 +41,17 @@ const Navbar = () => {
     }
   }, [isOpen]);
 
+import React from "react";
+import Logo from "../assets/GlintXLogo.png";
+import "./Navbar.css";
+import { useState } from "react";
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen);
+  function handleClick() {
+    setIsOpen(!isOpen);
+  }
   return (
     <div className="main-navbar">
       <div className="navbar-main">
@@ -75,6 +86,22 @@ const Navbar = () => {
             <a ref={textRef3} href="#">
               Services
             </a>
+      <div
+        style={{
+          height: isOpen ? "100%" : "0",
+          marginTop: isOpen ? "0" : "-1000px",
+        }}
+        className="menu"
+      >
+        <div className="menu-items">
+          <div className="menu-item">
+            <a href="#">Home</a>
+          </div>
+          <div className="menu-item">
+            <a href="#">About</a>
+          </div>
+          <div className="menu-item">
+            <a href="#">Services</a>
           </div>
         </div>
       </div>
